@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function translit(str) {
   if (isBnsp) {
-    str = str.replace("&nbsp;", " ");
+    str = str.replaceAll("&nbsp;", " ");
   }
 
   if (isQuetes) {
-    str = str.replace(/«|»|""|''/g, '');
+    str = str.replaceAll(/«|»|""|''/g, '');
   }
 
   const ru = new Map([
