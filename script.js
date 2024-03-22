@@ -34,7 +34,6 @@ function translit(str) {
     str = str.replace(/«|»|""|''/g, '');
   }
 
-
   const ru = new Map([
     ["а", "a"],
     ["б", "b"],
@@ -100,7 +99,6 @@ const copyFn = (text) => {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      console.log('then')
       copySpan.textContent = "Скопировано"
       copy.classList.add("copied")
       setTimeout(() => {
@@ -109,7 +107,7 @@ const copyFn = (text) => {
       }, 200)
     })
     .catch((err) => {
-      console.log('erorr')
+      res.textContent = "Произошла ошибка"
     });
 };
 
@@ -128,11 +126,10 @@ pasteButton.addEventListener('click', () => {
   navigator.clipboard.readText()
     .then(text => {
       input.value = text;
-      console.log('Текст успешно добавлен в инпут');
       res.textContent = translit(text)
     })
     .catch(err => {
-      console.error('Ошибка при чтении текста из буфера обмена: ', err);
+      res.textContent = "Произошла ошибка"
     });
 });
 
