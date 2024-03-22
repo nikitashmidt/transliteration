@@ -1,0 +1,8 @@
+{
+  "name": "Транслитерация текста",
+  "version": "1.0",
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite"
+  ]
+}
